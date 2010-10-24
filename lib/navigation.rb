@@ -54,7 +54,7 @@ module RPH
         end
         
         return '' if items.blank?
-        content_tag(:ul, items, :class => 'navigation')
+        content_tag(:ul, items.to_s.html_safe, :class => 'navigation') # Made the items html_safe for rails 3
       end
       
       private
